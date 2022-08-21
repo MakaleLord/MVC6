@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% set page_title="My Blog" %}
+
+{% from "macros.html" import blog_post %}
+
+{% block heading %}
+    <div class="header-container">
+        <h1>Codewizard's Blog</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="post-container">
+        {% for post in posts %}
+            {{ blog_post(post, False) }}
+        {% endfor %}
+    </div>
+{% endblock %}
+<script type="application/javascript" src="/share.js"></script>
